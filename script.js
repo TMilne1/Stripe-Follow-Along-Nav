@@ -9,7 +9,22 @@ function enter(){
     setInterval(()=>{
         this.classList.add('trigger-enter-active')
     },200)
+    dropdownBackground.classList.add('open')
+
     
+    const dimensions = this.querySelector('.dropdown').getBoundingClientRect();
+    const dimensions2 = {
+        height: dimensions.height,
+        width: dimensions.width
+    }
+    //The way its done in the video
+    //dropdownBackground.style.setProperty('height', `${dimensions2.height}px`);
+   // dropdownBackground.style.setProperty('width', `${dimensions2.width}px` );
+    dropdownBackground.style.width = `${dimensions2.width}px`; 
+    dropdownBackground.style.height = `${dimensions2.height}px`; 
+
+
+            
     
 }
 
@@ -18,6 +33,8 @@ function exit(){
     console.log(this)
     this.classList.remove('trigger-enter')
     this.classList.remove ('trigger-enter-active')
+    dropdownBackground.classList.remove('open')  
+    
     
 
 }
